@@ -43,6 +43,7 @@ You can also use it in plots, for example:
 ``` r
 library(ggplot2)
 #> Warning: package 'ggplot2' was built under R version 4.2.2
+theme_update(text = element_text(size = 20))
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
   xlab("اسطوانات!")
@@ -70,18 +71,37 @@ Now the exclamation mark is on the left-hand side, like it should.
 
 Additionally, sometimes you wish to break up lines within a plot. the
 easiest way to do it is by pasting `\n`, but this results yet again with
-a problem in the location of non-RTL characters. Notice how the closing
-parantheses are on the right side, shile they sould be closing the
-remark and be placed on the left side.
+a problem in the location of non-RTL characters. Notice how the
+parentheses on the top `xlab()` row are correctly placed on the left
+side, but the parantheses on the bottom row are wrongly placed on the
+right side..
 
 ``` r
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
-  xlab(paste0("اسطوانات! (عدد المكابس)", "\n", "عام 2023"))
+  xlab(paste0("اسطوانات! (عدد المكابس)", "\n", "عام (2023)"))
 ```
 
 <img src="man/figures/README-plot_3-1.png" width="50%" />
 
 ``` r
-# `xlab` says "cylinders! (The year of 2023)" in Arabic.
+# `xlab()` says in Arabic:
+# "cylinders! (The number of pistons)"
+# "Year (2023)"
+```
+
+This can be easily solved with `str_rtl()` and `multiline = TRUE`:
+
+``` r
+ggplot(mtcars, aes(cyl)) +
+  geom_bar() +
+  xlab(str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE))
+```
+
+<img src="man/figures/README-plot_4-1.png" width="50%" />
+
+``` r
+# `xlab()` says in Arabic:
+# "cylinders! (The number of pistons)"
+# "Year (2023)"
 ```
