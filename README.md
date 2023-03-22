@@ -1,0 +1,87 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# rtlr
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of rtlr is to help you print correctly right-to-left text in
+the console and in plots.
+
+## Installation
+
+You can install the development version of rtlr from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("matanhakim/rtlr")
+```
+
+## Example
+
+This is a basic example of fixing an RTL issue when writing in Hebrew.
+Hebrew is written right-to-left, so punctuation marks (such as “,” or
+“.”) should come at the left side, i.e. the end, of a sentance.
+
+``` r
+library(rtlr)
+x <- "הנקודה צריכה להיות בסוף המשפט."
+# `x` says "the dot should come at the end of the sentance." in Hebrew.
+
+cat(x)
+#> הנקודה צריכה להיות בסוף המשפט.
+cat(str_rtl(x))
+#> ‫הנקודה צריכה להיות בסוף המשפט.
+```
+
+Notice how the dot ends up in the left side, where it should be.
+
+You can also use it in plots, for example:
+
+``` r
+library(ggplot2)
+#> Warning: package 'ggplot2' was built under R version 4.2.2
+ggplot(mtcars, aes(cyl)) +
+  geom_bar() +
+  xlab("اسطوانات!")
+```
+
+<img src="man/figures/README-plot_1-1.png" width="50%" />
+
+``` r
+# `xlab` says "cylinders!" in Arabic.
+```
+
+Notice how the exclamation mark is on the right-hand side, but it should
+be on the left, as Arabic is another right-to-left language. use
+`str_rtl()` to solve it, like this:
+
+``` r
+ggplot(mtcars, aes(cyl)) +
+  geom_bar() +
+  xlab(str_rtl("اسطوانات!"))
+```
+
+<img src="man/figures/README-plot_2-1.png" width="50%" />
+
+Now the exclamation mark is on the left-hand side, like it should.
+
+Additionally, sometimes you wish to break up lines within a plot. the
+easiest way to do it is by pasting `\n`, but this results yet again with
+a problem in the location of non-RTL characters. Notice how the closing
+parantheses are on the right side, shile they sould be closing the
+remark and be placed on the left side.
+
+``` r
+ggplot(mtcars, aes(cyl)) +
+  geom_bar() +
+  xlab(paste0("اسطوانات!", "\n", "(عام 2023)"))
+```
+
+<img src="man/figures/README-plot_3-1.png" width="50%" />
+
+``` r
+# `xlab` says "cylinders! (The year of 2023)" in Arabic.
+```
