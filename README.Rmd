@@ -69,7 +69,7 @@ Additionally, sometimes you wish to break up lines within a plot. the easiest wa
 ```{r plot_3, out.width="50%"}
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
-  xlab(paste0("اسطوانات!", "\n", "(عام 2023)"))
+  xlab(paste0("اسطوانات! (عدد المكابس)", "\n", "عام 2023"))
 # `xlab` says "cylinders! (The year of 2023)" in Arabic.
 ```
 

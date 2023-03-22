@@ -77,7 +77,7 @@ remark and be placed on the left side.
 ``` r
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
-  xlab(paste0("اسطوانات!", "\n", "(عام 2023)"))
+  xlab(paste0("اسطوانات! (عدد المكابس)", "\n", "عام 2023"))
 ```
 
 <img src="man/figures/README-plot_3-1.png" width="50%" />
