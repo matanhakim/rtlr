@@ -1,12 +1,18 @@
 Package: rtlr
-Title: What the Package Does (One Line, Title Case)
+Title: Print correctly Right-to-Left Languages
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Matan", "Hakim", , "matanhakim@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0002-9372-8975"))
+Description: Convenience functions to make some common tasks with RTL string
+    printing easier, more convinient and with no need to remember long unicode
+    charachters.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+Imports: 
+    stringr
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
