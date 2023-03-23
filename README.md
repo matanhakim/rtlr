@@ -7,7 +7,10 @@
 <!-- badges: end -->
 
 The goal of rtlr is to help you print correctly right-to-left text in
-the console and in plots.
+the console and in plots. It was motivated by this [Stack Overflow
+question](https://stackoverflow.com/questions/53915070/change-axis-text-direction-to-right-to-left)
+from 2018. As of now, its main and only function is `str_rtl()`, which
+wraps a string with RTL-embedding Unicode characters.
 
 ## Installation
 

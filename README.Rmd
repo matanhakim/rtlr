@@ -16,9 +16,10 @@ knitr::opts_chunk$set(
 # rtlr
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The goal of rtlr is to help you print correctly right-to-left text in the console and in plots.
+The goal of rtlr is to help you print correctly right-to-left text in the console and in plots. It was motivated by this [Stack Overflow question](https://stackoverflow.com/questions/53915070/change-axis-text-direction-to-right-to-left) from 2018. As of now, its main and only function is `str_rtl()`, which wraps a string with RTL-embedding Unicode characters.
 
 ## Installation
 
@@ -41,8 +42,8 @@ x <- "הנקודה צריכה להיות בסוף המשפט."
 cat(x)
 cat(str_rtl(x))
 ```
-Notice how the dot ends up in the left side, where it should be.
 
+Notice how the dot ends up in the left side, where it should be.
 
 You can also use it in plots, for example:
 
@@ -55,8 +56,7 @@ ggplot(mtcars, aes(cyl)) +
 # `xlab` says "cylinders!" in Arabic.
 ```
 
-Notice how the exclamation mark is on the right-hand side, but it should be on the left, as Arabic is another right-to-left language.
-use `str_rtl()` to solve it, like this:
+Notice how the exclamation mark is on the right-hand side, but it should be on the left, as Arabic is another right-to-left language. use `str_rtl()` to solve it, like this:
 
 ```{r plot_2, out.width="50%"}
 ggplot(mtcars, aes(cyl)) +
@@ -67,6 +67,7 @@ ggplot(mtcars, aes(cyl)) +
 Now the exclamation mark is on the left-hand side, like it should.
 
 Additionally, sometimes you wish to break up lines within a plot. The easiest way to do it is by pasting `\n`, but this results yet again with a problem in the location of non-RTL characters. Notice how the parentheses on the top `xlab()` row are correctly placed on the left side, but the parantheses on the bottom row are wrongly placed on the right side.
+
 ```{r plot_3, out.width="50%"}
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
@@ -77,6 +78,7 @@ ggplot(mtcars, aes(cyl)) +
 ```
 
 This can be easily solved with `str_rtl()` and `multiline = TRUE`:
+
 ```{r plot_4, out.width="50%"}
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
