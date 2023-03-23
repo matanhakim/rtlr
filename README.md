@@ -69,12 +69,12 @@ ggplot(mtcars, aes(cyl)) +
 
 Now the exclamation mark is on the left-hand side, like it should.
 
-Additionally, sometimes you wish to break up lines within a plot. the
+Additionally, sometimes you wish to break up lines within a plot. The
 easiest way to do it is by pasting `\n`, but this results yet again with
 a problem in the location of non-RTL characters. Notice how the
 parentheses on the top `xlab()` row are correctly placed on the left
 side, but the parantheses on the bottom row are wrongly placed on the
-right side..
+right side.
 
 ``` r
 ggplot(mtcars, aes(cyl)) +
