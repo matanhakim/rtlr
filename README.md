@@ -18,7 +18,13 @@ wraps a string with RTL-embedding Unicode characters.
 
 ## Installation
 
-You can install the development version of rtlr from
+You can install rtlr from CRAN with:
+
+``` r
+install.packages("rtlr)
+```
+
+Alternatively, you can install the development version of rtlr from
 [GitHub](https://github.com/) with:
 
 ``` r

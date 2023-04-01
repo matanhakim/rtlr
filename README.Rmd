@@ -25,7 +25,14 @@ The goal of rtlr is to help you print correctly right-to-left text in the consol
 
 ## Installation
 
-You can install the development version of rtlr from [GitHub](https://github.com/) with:
+You can install rtlr from CRAN with:
+
+``` r
+install.packages("rtlr)
+```
+
+
+Alternatively, you can install the development version of rtlr from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
