@@ -53,7 +53,7 @@ ggplot(mtcars, aes(cyl)) +
   geom_bar() +
   labs(
     x = "اسطوانات!"
-    # `xlab` says "cylinders!" in Arabic.
+    # `x` in `labs()` says "cylinders!" in Arabic.
   )
 ```
 
@@ -87,7 +87,7 @@ ggplot(mtcars, aes(cyl)) +
   geom_bar() +
   labs(
     x = paste0("اسطوانات! (عدد المكابس)", "\n", "عام (2023)")
-    # `xlab()` says in Arabic:
+    # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
   )
@@ -102,7 +102,7 @@ ggplot(mtcars, aes(cyl)) +
   geom_bar() +
   labs(
     x = str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE)
-    # `xlab()` says in Arabic:
+    # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
   )
@@ -119,11 +119,46 @@ ggplot(mtcars, aes(cyl)) +
   geom_bar() +
   labs(
     x = str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE),
-    # `xlab()` says in Arabic:
+    # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
     caption = "מקור המידע: טבלה מובנית של נתוני מכוניות. עיבוד: מתן חכים. כל הזכויות שמורות. אין לשכפל, להעתיק או להפיץ ללא רשות."
+    # `caption` says in Hebrew:
+    # "Source of data: a built-in data frame of car data. Analysis: Matan Hakim."
+    # "All rights reserved. Do not reproduce, copy or distribute without permission."
   )
 ```
 
 <img src="man/figures/README-plot_5-1.png" width="50%" />
+
+We have two problems here:
+
+1.  The caption gets cut off in the middle;
+2.  The dot in the end of the sentance is placed wrongly on the right
+    side, while it should be on the left.
+
+This can again be easily solved using the `multiline = TRUE` argument:
+
+``` r
+ggplot(mtcars, aes(cyl)) +
+  geom_bar() +
+  labs(
+    x = str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE),
+    # `x` in `labs()` says in Arabic:
+    # "cylinders! (The number of pistons)"
+    # "Year (2023)"
+    caption = str_rtl(
+      "מקור המידע: טבלה מובנית של נתוני מכוניות. עיבוד: מתן חכים.",
+      "כל הזכויות שמורות. אין לשכפל, להעתיק או להפיץ ללא רשות.",
+      multiline = TRUE
+    )
+    # `caption` says in Hebrew:
+    # "Source of data: a built-in data frame of car data. Analysis: Matan Hakim."
+    # "All rights reserved. Do not reproduce, copy or distribute without permission."
+  )
+```
+
+<img src="man/figures/README-plot_6-1.png" width="50%" />
+
+Notice how the lines are split with now overflow, and how the final dot
+is placed on the left side, where it should be.
