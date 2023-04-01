@@ -2,11 +2,12 @@ Package: rtlr
 Title: Print Right-to-Left Languages Correctly
 Version: 0.0.0.9000
 Authors@R: 
-    person("Matan", "Hakim", , "matanhakim@gmail.com", role = c("aut", "cre"),
+    person("Matan", "Hakim", , "matanhakim@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0009-0002-9372-8975"))
-Description: Convenience functions to make some common tasks with RTL string
+Description: Convenience functions to make some common tasks with right-to-left string
     printing easier, more convinient and with no need to remember long unicode
-    charachters.
+    charachters. Specifically helpful for right-to-left languages such as Arabic,
+    Persian and Hebrew.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

@@ -4,11 +4,11 @@
 \name{rtlr-package}
 \alias{rtlr}
 \alias{rtlr-package}
-\title{rtlr: Print correctly Right-to-Left Languages}
+\title{rtlr: Print Right-to-Left Languages Correctly}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Convenience functions to make some common tasks with RTL string printing easier, more convinient and with no need to remember long unicode charachters.
+Convenience functions to make some common tasks with right-to-left string printing easier, more convinient and with no need to remember long unicode charachters. Specifically helpful for right-to-left languages such as Arabic, Persian and Hebrew.
 }
 \seealso{
 Useful links:
@@ -20,7 +20,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Matan Hakim \email{matanhakim@gmail.com} (\href{https://orcid.org/0009-0002-9372-8975}{ORCID})
+\strong{Maintainer}: Matan Hakim \email{matanhakim@gmail.com} (\href{https://orcid.org/0009-0002-9372-8975}{ORCID}) [copyright holder]
 
 }
 \keyword{internal}
