@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/matanhakim/rtlr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/matanhakim/rtlr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of rtlr is to help you print correctly right-to-left text in the console and in plots. It was motivated by this [Stack Overflow question](https://stackoverflow.com/questions/53915070/change-axis-text-direction-to-right-to-left) from 2018. As of now, its main and only function is `str_rtl()`, which wraps a string with RTL-embedding Unicode characters.
