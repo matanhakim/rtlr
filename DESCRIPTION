@@ -1,5 +1,5 @@
 Package: rtlr
-Title: Print correctly Right-to-Left Languages
+Title: Print Right-to-Left Languages Correctly
 Version: 0.0.0.9000
 Authors@R: 
     person("Matan", "Hakim", , "matanhakim@gmail.com", role = c("aut", "cre"),
