@@ -17,5 +17,6 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-URL: https://github.com/matanhakim/rtlr
+URL: https://github.com/matanhakim/rtlr,
+    https://matanhakim.github.io/rtlr/
 BugReports: https://github.com/matanhakim/rtlr/issues
