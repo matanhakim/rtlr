@@ -22,7 +22,7 @@ You can install the development version of rtlr from
 devtools::install_github("matanhakim/rtlr")
 ```
 
-## Example
+## Basic Example
 
 This is a basic example of fixing an RTL issue when writing in Hebrew.
 Hebrew is written right-to-left, so punctuation marks (such as “,” or
@@ -41,6 +41,8 @@ cat(str_rtl(x))
 
 Notice how the dot ends up in the left side, where it should be.
 
+## Example in a Plot
+
 You can also use it in plots, for example:
 
 ``` r
@@ -49,14 +51,13 @@ library(ggplot2)
 theme_update(text = element_text(size = 20))
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
-  xlab("اسطوانات!")
+  labs(
+    x = "اسطوانات!"
+    # `xlab` says "cylinders!" in Arabic.
+  )
 ```
 
 <img src="man/figures/README-plot_1-1.png" width="50%" />
-
-``` r
-# `xlab` says "cylinders!" in Arabic.
-```
 
 Notice how the exclamation mark is on the right-hand side, but it should
 be on the left, as Arabic is another right-to-left language. use
@@ -65,7 +66,9 @@ be on the left, as Arabic is another right-to-left language. use
 ``` r
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
-  xlab(str_rtl("اسطوانات!"))
+  labs(
+    x = str_rtl("اسطوانات!")
+  )
 ```
 
 <img src="man/figures/README-plot_2-1.png" width="50%" />
@@ -82,29 +85,45 @@ right side.
 ``` r
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
-  xlab(paste0("اسطوانات! (عدد المكابس)", "\n", "عام (2023)"))
+  labs(
+    x = paste0("اسطوانات! (عدد المكابس)", "\n", "عام (2023)")
+    # `xlab()` says in Arabic:
+    # "cylinders! (The number of pistons)"
+    # "Year (2023)"
+  )
 ```
 
 <img src="man/figures/README-plot_3-1.png" width="50%" />
-
-``` r
-# `xlab()` says in Arabic:
-# "cylinders! (The number of pistons)"
-# "Year (2023)"
-```
 
 This can be easily solved with `str_rtl()` and `multiline = TRUE`:
 
 ``` r
 ggplot(mtcars, aes(cyl)) +
   geom_bar() +
-  xlab(str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE))
+  labs(
+    x = str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE)
+    # `xlab()` says in Arabic:
+    # "cylinders! (The number of pistons)"
+    # "Year (2023)"
+  )
 ```
 
 <img src="man/figures/README-plot_4-1.png" width="50%" />
 
+A common use case for this is in the caption of a plot, where sometimes
+you have to write a lot of text regarding the source of the data and the
+copyrights. When you don’t notice, you can easily overflow:
+
 ``` r
-# `xlab()` says in Arabic:
-# "cylinders! (The number of pistons)"
-# "Year (2023)"
+ggplot(mtcars, aes(cyl)) +
+  geom_bar() +
+  labs(
+    x = str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE),
+    # `xlab()` says in Arabic:
+    # "cylinders! (The number of pistons)"
+    # "Year (2023)"
+    caption = "מקור המידע: טבלת הנתונים mtcars. עיבוד: מתן חכים. כל הזכויות שמורות."
+  )
 ```
+
+<img src="man/figures/README-plot_5-1.png" width="50%" />
