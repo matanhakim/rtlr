@@ -31,7 +31,8 @@ Hebrew is written right-to-left, so punctuation marks (such as “,” or
 ``` r
 library(rtlr)
 x <- "הנקודה צריכה להיות בסוף המשפט."
-# `x` says "the dot should come at the end of the sentance." in Hebrew.
+# `x` says in Hebrew:
+# "the dot should come at the end of the sentance."
 
 cat(x)
 #> הנקודה צריכה להיות בסוף המשפט.
@@ -68,6 +69,8 @@ ggplot(mtcars, aes(cyl)) +
   geom_bar() +
   labs(
     x = str_rtl("اسطوانات!")
+    # `x` in `labs()` says in Arabic:
+    # "cylinders!"
   )
 ```
 
@@ -78,9 +81,9 @@ Now the exclamation mark is on the left-hand side, like it should.
 Additionally, sometimes you wish to break up lines within a plot. The
 easiest way to do it is by pasting `\n`, but this results yet again with
 a problem in the location of non-RTL characters. Notice how the
-parentheses on the top `xlab()` row are correctly placed on the left
-side, but the parantheses on the bottom row are wrongly placed on the
-right side.
+parentheses on the top row of `x` in `labs()` are correctly placed on
+the left side, but the parentheses on the bottom row are wrongly placed
+on the right side.
 
 ``` r
 ggplot(mtcars, aes(cyl)) +
@@ -122,10 +125,10 @@ ggplot(mtcars, aes(cyl)) +
     # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
-    caption = "מקור המידע: טבלה מובנית של נתוני מכוניות. עיבוד: מתן חכים. כל הזכויות שמורות. אין לשכפל, להעתיק או להפיץ ללא רשות."
+    caption = "מקור המידע: טבלה מובנית של נתוני מכוניות. עיבוד: מתן חכים. כל הזכויות שמורות. יש להקפיד על הצגת טקסט מימין לשמאל."
     # `caption` says in Hebrew:
     # "Source of data: a built-in data frame of car data. Analysis: Matan Hakim."
-    # "All rights reserved. Do not reproduce, copy or distribute without permission."
+    # "You should insist on showing your text right-to-left."
   )
 ```
 
@@ -134,7 +137,7 @@ ggplot(mtcars, aes(cyl)) +
 We have two problems here:
 
 1.  The caption gets cut off in the middle;
-2.  The dot in the end of the sentance is placed wrongly on the right
+2.  The dot in the end of the sentence is placed wrongly on the right
     side, while it should be on the left.
 
 This can again be easily solved using the `multiline = TRUE` argument:
@@ -149,16 +152,16 @@ ggplot(mtcars, aes(cyl)) +
     # "Year (2023)"
     caption = str_rtl(
       "מקור המידע: טבלה מובנית של נתוני מכוניות. עיבוד: מתן חכים.",
-      "כל הזכויות שמורות. אין לשכפל, להעתיק או להפיץ ללא רשות.",
+      "יש להקפיד על הצגת טקסט מימין לשמאל.",
       multiline = TRUE
     )
     # `caption` says in Hebrew:
     # "Source of data: a built-in data frame of car data. Analysis: Matan Hakim."
-    # "All rights reserved. Do not reproduce, copy or distribute without permission."
+    # "You should insist on showing your text right-to-left."
   )
 ```
 
 <img src="man/figures/README-plot_6-1.png" width="50%" />
 
-Notice how the lines are split with now overflow, and how the final dot
+Notice how the lines are split with no overflow, and how the final dot
 is placed on the left side, where it should be.
