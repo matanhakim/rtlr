@@ -111,7 +111,7 @@ ggplot(mtcars, aes(cyl)) +
     # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
-    caption = "מקור המידע: טבלה מובנית של נתוני מכוניות. עיבוד: מתן חכים. כל הזכויות שמורות. יש להקפיד על הצגת טקסט מימין לשמאל."
+    caption = "מקור המידע: טבלה מובנית של נתוני מכוניות. עיבוד: מתן חכים. יש להקפיד על הצגת טקסט מימין לשמאל."
     # `caption` says in Hebrew:
     # "Source of data: a built-in data frame of car data. Analysis: Matan Hakim."
     # "You should insist on showing your text right-to-left."
