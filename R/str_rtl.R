@@ -3,17 +3,17 @@
 #' @param ... One or more character vectors, ideally of length 1.
 #' @param multiline Whether to split the input strings to separate lines. Defaults to `FALSE`.
 #'
-#' @return A character vector.
+#' @returns A character vector.
 #' @export
 #'
 #' @examples
-#' # Notice how the `.` prints to the right, while it should print to the left
-#' cat("א.")
+#' # Notice how the `.` prints to the right, while in RTL it should print to the left
+#' cat("a.")
 #'
 #' # `str_rtl()` fixes this:
-#' str_rtl("א.") |> cat()
+#' str_rtl("a.") |> cat()
 #'
-#' str_rtl("א.", "ב.", multiline = TRUE) |> cat()
+#' str_rtl("a.", "b.", multiline = TRUE) |> cat()
 str_rtl <- function(..., multiline = FALSE) {
   if (multiline)
   {

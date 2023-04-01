@@ -18,11 +18,11 @@ A character vector.
 Wrap a string with RTL-embedding Unicode characters
 }
 \examples{
-# Notice how the `.` prints to the right, while it should print to the left
-cat("א.")
+# Notice how the `.` prints to the right, while in RTL it should print to the left
+cat("a.")
 
 # `str_rtl()` fixes this:
-str_rtl("א.") |> cat()
+str_rtl("a.") |> cat()
 
-str_rtl("א.", "ב.", multiline = TRUE) |> cat()
+str_rtl("a.", "b.", multiline = TRUE) |> cat()
 }
