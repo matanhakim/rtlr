@@ -20,8 +20,7 @@ str_rtl <- function(..., multiline = FALSE) {
     stringr::str_c(
       "\u202B",
       stringr::str_c(
-        unlist(list(...)) |>
-          stringr::str_replace_all("\n", "\n\u202B"),
+        ...,
         sep = "\n\u202B",
         collapse = "\n\u202B"
       )
@@ -32,8 +31,7 @@ str_rtl <- function(..., multiline = FALSE) {
     stringr::str_c(
       "\u202B",
       stringr::str_c(
-        unlist(list(...)) |>
-          stringr::str_replace_all("\n", "\n\u202B"),
+        ...,
         sep = "\u202B"
       )
     )
