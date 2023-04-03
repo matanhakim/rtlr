@@ -5,8 +5,8 @@ Authors@R:
     person("Matan", "Hakim", , "matanhakim@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0009-0002-9372-8975"))
 Description: Convenience functions to make some common tasks with right-to-left string
-    printing easier, more convinient and with no need to remember long unicode
-    charachters. Specifically helpful for right-to-left languages such as Arabic,
+    printing easier, more convenient and with no need to remember long Unicode
+    characters. Specifically helpful for right-to-left languages such as Arabic,
     Persian and Hebrew.
 License: MIT + file LICENSE
 Encoding: UTF-8
