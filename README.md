@@ -98,7 +98,11 @@ on the right side.
 ``` r
 p +
   labs(
-    x = paste0("اسطوانات! (عدد المكابس)", "\n", "عام (2023)")
+    x = paste0(
+      "اسطوانات! (عدد المكابس)",
+      "\n",
+      "عام (2023)"
+    )
     # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"

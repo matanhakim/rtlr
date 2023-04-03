@@ -89,7 +89,11 @@ Additionally, sometimes you wish to break up lines within a plot. The easiest wa
 ```{r plot_3, out.width="50%"}
 p +
   labs(
-    x = paste0("اسطوانات! (عدد المكابس)", "\n", "عام (2023)")
+    x = paste0(
+      "اسطوانات! (عدد المكابس)",
+      "\n",
+      "عام (2023)"
+    )
     # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
