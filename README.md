@@ -60,8 +60,9 @@ You can also use it in plots, for example:
 library(ggplot2)
 #> Warning: package 'ggplot2' was built under R version 4.2.2
 theme_update(text = element_text(size = 20))
-ggplot(mtcars, aes(cyl)) +
-  geom_bar() +
+p <- ggplot(mtcars, aes(factor(cyl))) +
+  geom_bar()
+p +
   labs(
     x = "اسطوانات!"
     # `x` in `labs()` says "cylinders!" in Arabic.
@@ -75,8 +76,7 @@ be on the left, as Arabic is another right-to-left language. use
 `str_rtl()` to solve it, like this:
 
 ``` r
-ggplot(mtcars, aes(cyl)) +
-  geom_bar() +
+p +
   labs(
     x = str_rtl("اسطوانات!")
     # `x` in `labs()` says in Arabic:
@@ -96,8 +96,7 @@ the left side, but the parentheses on the bottom row are wrongly placed
 on the right side.
 
 ``` r
-ggplot(mtcars, aes(cyl)) +
-  geom_bar() +
+p +
   labs(
     x = paste0("اسطوانات! (عدد المكابس)", "\n", "عام (2023)")
     # `x` in `labs()` says in Arabic:
@@ -111,10 +110,13 @@ ggplot(mtcars, aes(cyl)) +
 This can be easily solved with `str_rtl()` and `multiline = TRUE`:
 
 ``` r
-ggplot(mtcars, aes(cyl)) +
-  geom_bar() +
+p +
   labs(
-    x = str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE)
+    x = str_rtl(
+      "اسطوانات! (عدد المكابس)",
+      "عام (2023)",
+      multiline = TRUE
+    )
     # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
@@ -128,10 +130,13 @@ you have to write a lot of text regarding the source of the data and the
 copyrights. When you don’t notice, you can easily overflow:
 
 ``` r
-ggplot(mtcars, aes(cyl)) +
-  geom_bar() +
+p +
   labs(
-    x = str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE),
+    x = str_rtl(
+      "اسطوانات! (عدد المكابس)",
+      "عام (2023)",
+      multiline = TRUE
+    ),
     # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
@@ -153,10 +158,13 @@ We have two problems here:
 This can again be easily solved using the `multiline = TRUE` argument:
 
 ``` r
-ggplot(mtcars, aes(cyl)) +
-  geom_bar() +
+p +
   labs(
-    x = str_rtl("اسطوانات! (عدد المكابس)", "عام (2023)", multiline = TRUE),
+    x = str_rtl(
+      "اسطوانات! (عدد المكابس)",
+      "عام (2023)",
+      multiline = TRUE
+    ),
     # `x` in `labs()` says in Arabic:
     # "cylinders! (The number of pistons)"
     # "Year (2023)"
