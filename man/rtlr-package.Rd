@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Convenience functions to make some common tasks with right-to-left string printing easier, more convinient and with no need to remember long unicode charachters. Specifically helpful for right-to-left languages such as Arabic, Persian and Hebrew.
+Convenience functions to make some common tasks with right-to-left string printing easier, more convenient and with no need to remember long Unicode characters. Specifically helpful for right-to-left languages such as Arabic, Persian and Hebrew.
 }
 \seealso{
 Useful links:
