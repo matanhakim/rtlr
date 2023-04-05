@@ -2,7 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-04-05T13:13Z
+last_built: 2023-04-05T13:46Z
 urls:
   reference: https://matanhakim.github.io/rtlr/reference
   article: https://matanhakim.github.io/rtlr/articles
