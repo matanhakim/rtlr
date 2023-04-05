@@ -1,6 +1,6 @@
 Package: rtlr
 Title: Print Right-to-Left Languages Correctly
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person("Matan", "Hakim", , "matanhakim@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0009-0002-9372-8975"))

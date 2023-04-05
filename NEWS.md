@@ -1,3 +1,5 @@
+# rtlr (development version)
+
 # rtlr 0.1.0
 
 -   First release to CRAN, including the first implementation of `str_rtl()`.
