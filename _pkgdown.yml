@@ -5,3 +5,5 @@ news:
   releases:
   - text: "Introducing rtrl - an R Package for RTL Languages"
     href: https://matanhakim.org/posts/2023-04-05-rtlr-0-1-0/
+development:
+  mode: auto
