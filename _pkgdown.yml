@@ -1,4 +1,9 @@
 url: https://matanhakim.github.io/rtlr/
+
+authors:
+  Matan Hakim:
+    href: https://matanhakim.org/
+
 template:
   bootstrap: 5
 news:
